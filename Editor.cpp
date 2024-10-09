@@ -4,8 +4,11 @@
 void Editor::loop()
 {
     string input;
-    while(getline(cin,input))
+    while(true)
+
     {
+        cout << "*";
+        getline(cin,input);
         // DEBUG
         if(input == "DEBUG")
         {
@@ -13,6 +16,19 @@ void Editor::loop()
             continue;
         }
 
+        // Print help message
+        if(input == "h")
+        {
+            cout << "h: prints this message\n"
+                    "q: quit the program \n"
+                    "$: jump to end of file \n"
+                    "a: append text \n"
+                    "i: insert text \n"
+                    "c: replace line \n"
+                    "d: remove line \n";
+
+            continue;
+        }
         // 'q' option
         if (input == "q")
         {
@@ -78,7 +94,7 @@ void Editor::loop()
             string file_name = input.substr(2);
             if(file_name.find(' ') != string::npos)
             {
-                cout << "?" << endl; //DEBUG    
+                cout << "No File Name." << endl; //DEBUG    
             } else {
                 m_doc.saveDocument(file_name);
             }
