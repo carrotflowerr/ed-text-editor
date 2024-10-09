@@ -5,7 +5,7 @@ LDFLAGS =
 SOURCES = main.cpp Document.cpp Editor.cpp
 HEADERS = Document.h Editor.h
 OBJECTS = $(SOURCES:.cpp=.o)
-EXECUTABLE = ed-text-editor
+EXECUTABLE = edpp
 
 all: $(EXECUTABLE)
 
